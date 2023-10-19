@@ -1,0 +1,19 @@
+.Posts{
+    display:inline-block;
+    width:500px;
+}
+
+.Blog{
+    text-align:center;
+}
+
+.Blog ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+.Blog li{
+    display:inline-block;
+    margin:20px;
+}

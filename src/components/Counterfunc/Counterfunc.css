@@ -1,0 +1,14 @@
+#main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+  #main div {
+    width: auto;
+    height: 50px;
+  }
+
+  #para{
+     text-align: center;
+  }

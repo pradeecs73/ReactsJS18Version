@@ -1,0 +1,20 @@
+.search {
+    width: 30rem;
+    margin: 10px auto;
+    max-width: 80%;
+  }
+  
+  .search-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .search-input input {
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0.15rem 0.25rem;
+    width: 100%
+  }
