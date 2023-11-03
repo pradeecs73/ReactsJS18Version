@@ -114,7 +114,16 @@ class Person extends Component<personInterface,{}> {
    sendPropDataToChild=(value:any)=>{
       return (<h1>Sending value is {value}</h1>);
    }
-  
+
+   deletePerson1(personIndex:any,name:any,thisinstance:any){
+      //const persons = this.state.persons.slice();
+      console.log('parameter1',personIndex);
+      console.log('parameter2',name);
+      console.log('parameter3',thisinstance);
+      const persons = [...this.state.persons];
+      persons.splice(personIndex, 1);
+      this.setState({ persons: persons });
+  };
 
 
     render() {
@@ -135,6 +144,7 @@ class Person extends Component<personInterface,{}> {
                         <p> {this.shortenData("shorten the text i studided engineering")} </p>
                         <p> {this.context.shortenData("shorten the text i studided engineering")} </p>
                         <p onClick={()=>this.deletePerson(index)}> I'm {person.name} and I am {person.age} years old!</p>
+                        <p onClick={this.deletePerson1.bind(this,index,'suresh')}> I'm {person.name} and I am {person.age} years old!</p>
                        <input type="text"  ref={this.inputElementRef}   value={person.name} onChange={(event)=>this.textChanged(event,person.id)} />
 
                     </div>

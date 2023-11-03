@@ -4,11 +4,13 @@ import  './Counterfunc.css';
 import { connect } from 'react-redux';
 import { useSelector,useDispatch } from 'react-redux';
 import * as actionCreators from '../../store/actions/index';
+import CustomhookCounter from './../Customhook/customhook';
 
 const Counterfunc = React.memo((props:any) => {
   const [count, setCount] = useState(0);
   const [otherCounter, setOtherCounter] = useState(0);
   const authContext=useContext(AuthContext);
+  const customHookValue=CustomhookCounter(25);
 
   const reduxstatecounter=useSelector((state:any)=>{
      return state;
@@ -17,10 +19,12 @@ const Counterfunc = React.memo((props:any) => {
   const dispatch=useDispatch();
 
   useEffect(() => {
+     console.log('customhook value',customHookValue);
      console.log("use effect called count");
-  }, [count]);
+  }, [count,customHookValue.count1]);
 
   const increment = useCallback(() => {
+    customHookValue.increment();
     setCount((prevCount:any) => prevCount + 1)
   }, [count])
   const decrement = useCallback(() => {
@@ -29,6 +33,7 @@ const Counterfunc = React.memo((props:any) => {
   const incrementOtherCounter = useCallback(() => {
     setOtherCounter(otherCounter + 1)
   }, [otherCounter])
+  
 
   return (
  

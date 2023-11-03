@@ -29,6 +29,7 @@ class Posts extends Component<{},{}> {
 
     loadSinglePost(postId:any,thisinstance:any)
     {
+        console.log("thisinstance",thisinstance)
         thisinstance.props.history.push('/posts/'+postId+"?serchedtext='bike'");
     }
 
@@ -36,7 +37,7 @@ class Posts extends Component<{},{}> {
 
         const posts=this.state.posts.map((post:any) =>
             {
-                 return   ( <Post id={post.id} key={post.id} {...this.props} title={post.title} clicked={this.loadSinglePost}></Post>) 
+                 return   ( <Post id={post.id} key={post.id} {...this.props} title={post.title} clicked={(postId:any,thisInstance:any)=>this.loadSinglePost(postId,thisInstance)}></Post>) 
             }); 
             
         return(   

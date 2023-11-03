@@ -10,6 +10,7 @@ const Search = (props:any) => {
 
   useEffect(() => {
 
+    inputRef.current.focus();    
     if (enteredFilter === inputRef.current.value) {
 
       if(enteredFilter.length === 0)
