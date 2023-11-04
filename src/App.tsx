@@ -16,6 +16,7 @@ import ReactTesting  from './components/ReactTesting/ReactTesting';
 import Posts from './components/Posts/Posts';
 import Fullpost from './components/Fullpost/Fullpost';
 import Newpost from './components/Newpost/Newpost';
+import Defaultprops from './components/Defaultprops/Defaultprops';
 
 const Newpostcomponent=React.lazy(()=> import('./components/Newpost/Newpost'));
 
@@ -75,6 +76,7 @@ class App extends Component<{},{}> {
                           <Route exact path="/reacttesting"  component={ReactTesting}></Route>
                           <Route exact path="/posts"  component={Posts}></Route>
                           <Route exact path="/posts/:id"  component={Fullpost}></Route>
+                          <Route exact path="/defaultprops"  component={Defaultprops}></Route>
                           {this.state.authenticated?<Route exact path="/newpost" render={()=>
                               <Suspense  {...this.props} fallback={<div>loading</div>}>
                                <Newpostcomponent />
