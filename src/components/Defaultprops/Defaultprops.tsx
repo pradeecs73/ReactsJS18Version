@@ -2,19 +2,27 @@ import React,{useEffect,useState} from 'react';
 import axios from 'axios';
   
 const Defaultprops=(props:any)=> { 
+ const [nation,setNation]=useState("india");
+
   return ( 
     <div > 
       <Person name="kapil" eyeColor="blue" age="23"></Person> 
       <Person name="Sachin" eyeColor="blue" ></Person> 
       <Person name="Nikhil" age="23"></Person> 
       <Person eyeColor="green" age="23"></Person> 
-      <Apiresult></Apiresult>
+      <p>Nation is : {nation}</p>
+      <div>
+        <button onClick={()=>setNation('bharat')}>set Nation</button>
+      </div>
+      <Apiresult  nationName={nation}></Apiresult>
     </div> 
   ); 
 } 
 
 const Apiresult=(props:any)=>{
     const [apiData,setApiData]=useState([]);
+    const { nationName } = props;
+    const [nationNameChange,setNationNameChange]=useState(nationName);
 
     useEffect(()=>{
       axios.get("/posts")
@@ -25,6 +33,10 @@ const Apiresult=(props:any)=>{
       });
     });
 
+    useEffect(()=>{
+      setNationNameChange(nationName);
+    },[nationName]);
+
     const posts=apiData.map((post:any) =>
     {
          return   (<div id={post.id} key={post.id}>{post.title}</div>) 
@@ -33,6 +45,10 @@ const Apiresult=(props:any)=>{
     return(
          <div>
             {posts}
+            <div>
+                <p>national name  from prop : {nationName}</p>
+                <p>national name  through change : {nationNameChange}</p>
+            </div>
          </div>
     )
 
