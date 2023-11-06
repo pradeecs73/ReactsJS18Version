@@ -76,7 +76,7 @@ class App extends Component<{},{}> {
                           <Route exact path="/reacttesting"  component={ReactTesting}></Route>
                           <Route exact path="/posts"  component={Posts}></Route>
                           <Route exact path="/posts/:id"  component={Fullpost}></Route>
-                          <Route exact path="/defaultprops"  component={Defaultprops}></Route>
+                          <Route exact path="/defaultprops/:id"  component={Defaultprops}></Route>
                           {this.state.authenticated?<Route exact path="/newpost" render={()=>
                               <Suspense  {...this.props} fallback={<div>loading</div>}>
                                <Newpostcomponent />

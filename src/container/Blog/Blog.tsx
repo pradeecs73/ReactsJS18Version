@@ -47,7 +47,7 @@ class Blog extends Component<{},{}> {
                             <li><Link to="/counterfunc">Counter func</Link></li>
                             <li><Link to="/arrayopeartion">Array opeartion</Link></li>
                             <li><Link to="/reacttesting">React Testing Inputs</Link></li>
-                            <li><Link to="/defaultprops">Default props</Link></li>
+                            <li><Link to="/defaultprops/2">Default props</Link></li>
                         </ul>
                     </nav>
                 </header>

@@ -1,8 +1,15 @@
 import React,{useEffect,useState} from 'react'; 
+import {useParams,useLocation} from 'react-router-dom'; 
 import axios from 'axios';
   
 const Defaultprops=(props:any)=> { 
- const [nation,setNation]=useState("india");
+const [nation,setNation]=useState("india");
+const params:any=useParams();
+let queryParam:any=useLocation().search;
+
+  useEffect(()=>{
+    console.log('params',params['id']);
+  },[]);
 
   return ( 
     <div > 
@@ -27,11 +34,12 @@ const Apiresult=(props:any)=>{
     useEffect(()=>{
       axios.get("/posts")
       .then(response =>{
+        console.log('called');
         setApiData(response.data.slice(0,5));
       }).catch((error:any)=>{
             console.log(error);
       });
-    });
+    },[]);
 
     useEffect(()=>{
       setNationNameChange(nationName);
