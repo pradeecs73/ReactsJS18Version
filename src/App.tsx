@@ -17,6 +17,7 @@ import Posts from './components/Posts/Posts';
 import Fullpost from './components/Fullpost/Fullpost';
 import Newpost from './components/Newpost/Newpost';
 import Defaultprops from './components/Defaultprops/Defaultprops';
+import NestedArray from './components/NestedArray/NestedArray';
 
 const Newpostcomponent=React.lazy(()=> import('./components/Newpost/Newpost'));
 
@@ -77,6 +78,7 @@ class App extends Component<{},{}> {
                           <Route exact path="/posts"  component={Posts}></Route>
                           <Route exact path="/posts/:id"  component={Fullpost}></Route>
                           <Route exact path="/defaultprops/:id"  component={Defaultprops}></Route>
+                          <Route exact path="/nestedarray"  component={NestedArray}></Route>
                           {this.state.authenticated?<Route exact path="/newpost" render={()=>
                               <Suspense  {...this.props} fallback={<div>loading</div>}>
                                <Newpostcomponent />
