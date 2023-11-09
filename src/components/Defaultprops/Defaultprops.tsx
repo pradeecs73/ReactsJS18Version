@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'; 
+import React,{useEffect,useState,useRef} from 'react'; 
 import {useParams,useLocation} from 'react-router-dom'; 
 import axios from 'axios';
   
@@ -6,8 +6,10 @@ const Defaultprops=(props:any)=> {
 const [nation,setNation]=useState("india");
 const params:any=useParams();
 let queryParam:any=useLocation().search;
+const inputRef:any = useRef();
 
   useEffect(()=>{
+    inputRef.current.focus();    
     console.log('params',params['id']);
   },[]);
 
@@ -21,12 +23,12 @@ let queryParam:any=useLocation().search;
       <div>
         <button onClick={()=>setNation('bharat')}>set Nation</button>
       </div>
-      <Apiresult  nationName={nation}></Apiresult>
+      <Apiresult  ref={inputRef}  nationName={nation}></Apiresult>
     </div> 
   ); 
 } 
 
-const Apiresult=(props:any)=>{
+const Apiresult=React.forwardRef((props:any,ref:any)=>{
     const [apiData,setApiData]=useState([]);
     const { nationName } = props;
     const [nationNameChange,setNationNameChange]=useState(nationName);
@@ -56,11 +58,12 @@ const Apiresult=(props:any)=>{
             <div>
                 <p>national name  from prop : {nationName}</p>
                 <p>national name  through change : {nationNameChange}</p>
+                <input type='text'  ref={ref} />
             </div>
          </div>
     )
 
-}
+});
   
 const Person=(props:any)=>{ 
   return ( 

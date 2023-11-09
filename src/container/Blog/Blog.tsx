@@ -49,6 +49,7 @@ class Blog extends Component<{},{}> {
                             <li><Link to="/reacttesting">React Testing Inputs</Link></li>
                             <li><Link to="/defaultprops/2">Default props</Link></li>
                             <li><Link to="/nestedarray">Nested array</Link></li>
+                            <li><Link to="/functioncontext">Function Context</Link></li>
                         </ul>
                     </nav>
                 </header>

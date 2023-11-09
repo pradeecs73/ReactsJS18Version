@@ -3,7 +3,7 @@ import React from 'react';
 const authContext = React.createContext<any>({
   authenticated: false,
   login: () => {},
-  receivedData:"",
+  receivedData:"mysore",
   shortenData: (str:any) => {
   }
 });
