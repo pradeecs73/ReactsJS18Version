@@ -35,18 +35,22 @@ class Cockpit extends Component<cockpitInterface,{}> {
 
     async asyncWait()
     {
-      const result= await this.asyncWaitCalled();
-      console.log(result);
+      let myarray=[10,20,30,40,50];
+      for(let i=0;i<myarray.length;i++){
+        const result= await this.asyncWaitCalled(myarray[i]);
+        console.log(result);
+      }
+      
       console.log("pradeep");
     }
 
-    asyncWaitCalled=()=>{
+    asyncWaitCalled=(param:any)=>{
        
       return new Promise((resolve,reject)=>{
            
           setTimeout(()=>{
-             resolve("data returned after resolved");
-          },5000);
+             resolve(`data returned after resolved  ${param}`);
+          },2000);
 
       });
        

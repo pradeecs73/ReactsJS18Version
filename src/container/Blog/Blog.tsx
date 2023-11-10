@@ -50,6 +50,7 @@ class Blog extends Component<{},{}> {
                             <li><Link to="/defaultprops/2">Default props</Link></li>
                             <li><Link to="/nestedarray">Nested array</Link></li>
                             <li><Link to="/functioncontext">Function Context</Link></li>
+                            <li><Link to="/hoccomponent">Hoc Component</Link></li>
                         </ul>
                     </nav>
                 </header>
