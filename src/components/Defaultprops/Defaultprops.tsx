@@ -1,6 +1,8 @@
 import React,{useEffect,useState,useRef} from 'react'; 
 import {useParams,useLocation} from 'react-router-dom'; 
 import axios from 'axios';
+import  './Defaultprops.css';
+
   
 const Defaultprops=(props:any)=> { 
 const [nation,setNation]=useState("india");
@@ -14,10 +16,10 @@ const inputRef:any = useRef();
   },[]);
 
   return ( 
-    <div > 
-      <Person name="kapil" eyeColor="blue" age="23"></Person> 
-      <Person name="Sachin" eyeColor="blue" ></Person> 
-      <Person name="Nikhil" age="23"></Person> 
+    <div style={{textAlign:'center'}}> 
+      <Person name="kapil" eyeColor="blue" age="23"></Person> <br></br>
+      <Person name="Sachin" eyeColor="blue" ></Person> <br></br>
+      <Person name="Nikhil" age="23"></Person> <br></br>
       <Person eyeColor="green" age="23"></Person> 
       <p>Nation is : {nation}</p>
       <div>
@@ -67,11 +69,11 @@ const Apiresult=React.forwardRef((props:any,ref:any)=>{
   
 const Person=(props:any)=>{ 
   return ( 
-    <div> 
-      <p> Name: {props.name} </p> 
-      <p>EyeColor: {props.eyeColor}</p> 
-      <p>Age : {props.age} </p> 
-      <hr></hr> 
+    <div className='main' style={{textAlign:'center'}}> 
+      <span> Name: {props.name} ,</span> 
+      <span>EyeColor: {props.eyeColor} ,</span> 
+      <span>Age : {props.age} </span> 
+      <br></br><br></br>
     </div> 
   ) 
 } 
