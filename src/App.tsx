@@ -36,12 +36,13 @@ class App extends Component<{},{}> {
     state = {
       
       authenticated: false,
-      receivedData:""
+      receivedData:"pradeep"
 
     };
 
     loginHandler = () => {
       this.setState({ authenticated: true });
+      this.setState({ receivedData: "prasad" });
     };
 
 

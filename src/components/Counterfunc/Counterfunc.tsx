@@ -23,16 +23,18 @@ const Counterfunc = React.memo((props:any) => {
      console.log("use effect called count");
   }, [count,customHookValue.count1]);
 
-  const increment = useCallback(() => {
+  const increment = () => {
     customHookValue.increment();
     setCount((prevCount:any) => prevCount + 1)
-  }, [count])
-  const decrement = useCallback(() => {
+  };
+
+  const decrement = () => {
     setCount((prevCount:any) => prevCount - 1)
-  }, [count])
-  const incrementOtherCounter = useCallback(() => {
+  };
+
+  const incrementOtherCounter = () => {
     setOtherCounter(otherCounter + 1)
-  }, [otherCounter])
+  };
   
 
   return (
