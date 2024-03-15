@@ -4,4 +4,7 @@ import {deleteCounter} from './resultsaga';
 
 export function* sagaDeleteResult(){
     yield takeEvery(actionTypes.DELETE_RESULT_SAGA,deleteCounter);
+    // yield takeLatest(actionTypes.DELETE_RESULT_SAGA,deleteCounter);
+    //yield takeEvery([actionTypes.DELETE_RESULT_SAGA],deleteCounter);
+    //yield takeLatest([actionTypes.DELETE_RESULT_SAGA],deleteCounter);
 }
