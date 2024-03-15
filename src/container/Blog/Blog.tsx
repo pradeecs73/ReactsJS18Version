@@ -51,6 +51,8 @@ class Blog extends Component<{},{}> {
                             <li><Link to="/nestedarray">Nested array</Link></li>
                             <li><Link to="/functioncontext">Function Context</Link></li>
                             <li><Link to="/hoccomponent">Hoc Component</Link></li>
+                            <li><Link to="/callbackexample">Use Callback Example</Link></li>
+                            <li><Link to="/usememoexample">Use Memo Example</Link></li>
                         </ul>
                     </nav>
                 </header>

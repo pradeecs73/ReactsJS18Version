@@ -20,6 +20,8 @@ import Defaultprops from './components/Defaultprops/Defaultprops';
 import NestedArray from './components/NestedArray/NestedArray';
 import FunctionContext from './components/FunctionContext/FunctionContext';
 import HocWrapperComponent from './components/HocComponents/HocWrapperComponent';
+import useCallbackExample from './components/CallbackExample/callbackexample';
+import callMemoExample from './components/CallmemoExample/callmemoexample';
 
 const Newpostcomponent=React.lazy(()=> import('./components/Newpost/Newpost'));
 
@@ -84,6 +86,8 @@ class App extends Component<{},{}> {
                           <Route exact path="/nestedarray"  component={NestedArray}></Route>
                           <Route exact path="/functioncontext"  component={FunctionContext}></Route>
                           <Route exact path="/hoccomponent"  component={HocWrapperComponent}></Route>
+                          <Route exact path="/callbackexample"  component={useCallbackExample}></Route>
+                          <Route exact path="/usememoexample"  component={callMemoExample}></Route>
                           {this.state.authenticated?<Route exact path="/newpost" render={()=>
                               <Suspense  {...this.props} fallback={<div>loading</div>}>
                                <Newpostcomponent />
