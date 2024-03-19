@@ -10,6 +10,8 @@ describe("custom counter", () => {
 
     it('should check for increment and decrement counter', () => {
         const {result}=renderHook(CustomhookCounter);
+       //act basically update the state before assertion
+
         act(() =>{
             result.current.increment();
         })

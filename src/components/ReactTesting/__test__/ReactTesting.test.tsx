@@ -85,7 +85,7 @@ describe("Header", () => {
         expect(h1Element4).toBeInTheDocument();  
     });
 
-    it('should trigger a method on button click', async () => {
+    it('should trigger a method on button click for greeting-button', async () => {
 
         render(
             <ReactTesting 
