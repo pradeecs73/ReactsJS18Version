@@ -9,3 +9,5 @@ const MyComponent = ({ onClick }:any) => {
 };
 
 export default MyComponent;
+
+
