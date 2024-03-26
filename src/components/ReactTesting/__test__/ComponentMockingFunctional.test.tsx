@@ -1,5 +1,5 @@
 import React from 'react';
-import { render,waitFor } from '@testing-library/react';
+import { screen,render,waitFor } from '@testing-library/react';
 import MyFunctionalComponent from './../ComponentMockingFunctional';
 import { act } from 'react-dom/test-utils';
 
@@ -20,14 +20,9 @@ describe('MyComponent', () => {
 // Your test cases
 it('renders mocked functional component', async () => {
          // Render the component
-    const { getByTestId } = render(<MyFunctionalComponent text="Mocked Text" />);
+    const { getByTestId } = render(<MyFunctionalComponent text="MockedText" />);
 
-    await waitFor(() => {
-     // const mockedComponent = getByTestId('mocked-component');
-      //expect(mockedComponent).toBeInTheDocument();
-      // Optionally, you can also check the text content of the component
-     // expect(mockedComponent.textContent).toBe('Mocked Text');
-    });
+     //await waitFor(() => expect(screen.getByText(/MockedText/i)).toBeInTheDocument());
   
   });
 

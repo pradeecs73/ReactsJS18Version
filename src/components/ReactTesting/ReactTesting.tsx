@@ -11,9 +11,7 @@ const ReactTesting=(props:any) =>{
             .get(url)
             .then(response => {
               const {data} = response
-              console.log("mydata",data);
-              console.log("mydata1",data.data);
-              //setGreetingdata(data.data);
+              setGreetingdata(data.data);
             })
     }
     catch(e){

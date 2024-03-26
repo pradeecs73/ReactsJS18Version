@@ -1,4 +1,4 @@
-import { render,screen ,fireEvent,renderHook} from '@testing-library/react';
+import { render,screen ,fireEvent,renderHook,waitFor} from '@testing-library/react';
 import React from 'react';
 import ReactTesting from '../ReactTesting';
 import {rest} from 'msw'
@@ -11,7 +11,7 @@ const server = setupServer(
     // capture "GET /greeting" requests
     rest.get('/greeting', (req, res, ctx) => {
       // respond using a mocked JSON body
-      return res(ctx.json({data: 'hellothere'}))
+      return res(ctx.json({data: 'chanapatna'}))
     }),
   );
 
@@ -98,8 +98,7 @@ describe("Header", () => {
             fireEvent.click(h1Element1);
         })
        
-        //const h1Element3 = screen.getByText(/chanapatna/i);
-       //expect(h1Element3).toBeInTheDocument();
+       await waitFor(() => expect(screen.getByText(/chanapatna/i)).toBeInTheDocument());
 
     });
 
