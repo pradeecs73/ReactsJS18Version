@@ -39,61 +39,7 @@ test('adds 1 + 2 to equal 3', () => {
 
 
 
-// Now you can use fetchDataMock in your tests, and it will behave as specified in the mock implementation:
-test('fetchData returns mocked data', async () => {
-
-     // Suppose you have a function to be tested, like this:
-    /*function fetchData(url) {
-     // Some async operation to fetch data from the provided URL
-     }*/
-
-    const fetchDataMock = jest.fn();
-
-    // Now you can specify what the mock function should do when it's called using mockImplementation():
-    fetchDataMock.mockImplementation((url) => {
-    return Promise.resolve({ data: 'Mocked data' });
-    });
-
-    const data = await fetchDataMock('https://example.com/data');
-    expect(data).toEqual({ data: 'Mocked data' });
-});
 
 
-/*function fetchData() {
-    // Some async operation
-  }
-  
-  // You can mock it like this:
-  jest.mock('./path/to/fetchData'); // Adjust the path as needed
-  
-  // Now, let's mock the function to return resolved data
-  const mockedFetchData = require('./path/to/fetchData');
-  mockedFetchData.mockResolvedValue('mocked data');
-  
-  // Now, when you call fetchData, it will return the resolved data
-  fetchData().then(data => {
-    console.log(data); // This will log 'mocked data'
-  });*/
 
   
-  // Jest test
-  test('fetchData rejects with an error message', () => {
-
-      // Suppose you have a function to test, e.g., fetchData
-      /*function fetchData() {
-            return new Promise((resolve, reject) => {
-            // Some asynchronous operation
-            setTimeout(() => {
-                reject('Error: Unable to fetch data');
-            }, 1000);
-            });
-         }*/
-
-
-    // Mocking the fetchData function to return a rejected promise
-    const mockedFetchData = jest.fn().mockRejectedValue('Error: Unable to fetch data');
-  
-    // Your test logic here, where you can use mockedFetchData instead of the actual fetchData function
-    // For example:
-    return expect(mockedFetchData()).rejects.toMatch('Error: Unable to fetch data');
-  });

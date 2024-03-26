@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MyFunctionalComponent = ({ text }:any) => {
-  return <div>{text}</div>;
+  return <div data-testid="mocked-component1">{text}</div>;
 };
 
 export default MyFunctionalComponent;

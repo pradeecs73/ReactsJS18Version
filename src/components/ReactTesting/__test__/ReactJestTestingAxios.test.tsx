@@ -31,3 +31,15 @@ test('renders data fetched from API', async () => {
   await waitFor(() => expect(getByText('Data: Mocked data error')).toBeInTheDocument());
 
 });
+
+
+test('renders data fetched from API', async () => {
+  const mockData = 'Mocked data through spyon';
+
+  jest.spyOn(axios,'get').mockResolvedValue({ data: mockData });
+  const { getByText } = render(<MyComponent1 />);
+
+  // Wait for the component to render with the mocked data
+  await waitFor(() => expect(getByText('Data: Mocked data through spyon')).toBeInTheDocument());
+
+});
