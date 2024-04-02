@@ -53,6 +53,7 @@ class Blog extends Component<{},{}> {
                             <li><Link to="/hoccomponent">Hoc Component</Link></li>
                             <li><Link to="/callbackexample">Use Callback Example</Link></li>
                             <li><Link to="/usememoexample">Use Memo Example</Link></li>
+                            <li><Link to="/functionalform">functional form</Link></li>
                         </ul>
                     </nav>
                 </header>

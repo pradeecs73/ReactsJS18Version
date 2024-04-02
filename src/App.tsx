@@ -22,6 +22,7 @@ import FunctionContext from './components/FunctionContext/FunctionContext';
 import HocWrapperComponent from './components/HocComponents/HocWrapperComponent';
 import useCallbackExample from './components/CallbackExample/callbackexample';
 import callMemoExample from './components/CallmemoExample/callmemoexample';
+import FormSubmission from './components/Functionalform/functionalform';
 
 const Newpostcomponent=React.lazy(()=> import('./components/Newpost/Newpost'));
 
@@ -88,6 +89,7 @@ class App extends Component<{},{}> {
                           <Route exact path="/hoccomponent"  component={HocWrapperComponent}></Route>
                           <Route exact path="/callbackexample"  component={useCallbackExample}></Route>
                           <Route exact path="/usememoexample"  component={callMemoExample}></Route>
+                          <Route exact path="/functionalform"  component={FormSubmission}></Route>
                           {this.state.authenticated?<Route exact path="/newpost" render={()=>
                               <Suspense  {...this.props} fallback={<div>loading</div>}>
                                <Newpostcomponent />
