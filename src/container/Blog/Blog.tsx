@@ -54,6 +54,8 @@ class Blog extends Component<{},{}> {
                             <li><Link to="/callbackexample">Use Callback Example</Link></li>
                             <li><Link to="/usememoexample">Use Memo Example</Link></li>
                             <li><Link to="/functionalform">functional form</Link></li>
+                            <li><Link to="/multiplenestedapi">multiple nested api</Link></li>
+                            <li><Link to="/multiplenestedapiseries">multiple nested api in series</Link></li>
                         </ul>
                     </nav>
                 </header>

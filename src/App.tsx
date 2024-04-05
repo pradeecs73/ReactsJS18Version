@@ -23,6 +23,8 @@ import HocWrapperComponent from './components/HocComponents/HocWrapperComponent'
 import useCallbackExample from './components/CallbackExample/callbackexample';
 import callMemoExample from './components/CallmemoExample/callmemoexample';
 import FormSubmission from './components/Functionalform/functionalform';
+import MultipleApiIntegration from './components/NestedApi/NestedApi';
+import MultipleApiInSeries from './components/NestedApi/NestedApi2';
 
 const Newpostcomponent=React.lazy(()=> import('./components/Newpost/Newpost'));
 
@@ -90,6 +92,8 @@ class App extends Component<{},{}> {
                           <Route exact path="/callbackexample"  component={useCallbackExample}></Route>
                           <Route exact path="/usememoexample"  component={callMemoExample}></Route>
                           <Route exact path="/functionalform"  component={FormSubmission}></Route>
+                          <Route exact path="/multiplenestedapi"  component={MultipleApiIntegration}></Route>
+                          <Route exact path="/multiplenestedapiseries"  component={MultipleApiInSeries}></Route>
                           {this.state.authenticated?<Route exact path="/newpost" render={()=>
                               <Suspense  {...this.props} fallback={<div>loading</div>}>
                                <Newpostcomponent />
