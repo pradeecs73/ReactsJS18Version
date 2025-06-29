@@ -51,7 +51,7 @@ const ReactTesting=(props:any) =>{
                   </button>
               </div>
               <div>
-                   <p>The greeting data received from api is {greetingdata}</p>
+                   <p data-testid="api-data">The greeting data received from api is {greetingdata}</p>
               </div>
             </div>
         </React.Fragment>

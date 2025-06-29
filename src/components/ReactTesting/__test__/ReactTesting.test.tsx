@@ -99,6 +99,8 @@ describe("Header", () => {
         })
        
        await waitFor(() => expect(screen.getByText(/chanapatna/i)).toBeInTheDocument());
+      // await waitFor(() => expect(screen.getByTestId('api-data')).toHaveTextContent('chanapatna'));
+      // await waitFor(() => expect(screen.getByTestId('api-data').textContent).toBe('chanapatna'));
 
     });
 
