@@ -9,8 +9,8 @@ const Rubycubyexamplereact= (props:any) => {
     })
 
 
-    const changeColor=(index:any,array:any,event:any)=>{
-        let newArray=[...array]
+    const changeColor=(index:any,event:any)=>{
+        let newArray=[...myarry]
         if( newArray[index]){
             newArray[index]=false
            setMyarray(newArray)
@@ -31,7 +31,7 @@ const Rubycubyexamplereact= (props:any) => {
  
            return( array.map((item:any,index:any)=>{
                    return (
-                       <div  onClick={(event)=>changeColor(index,array,event)}
+                       <div  onClick={(event)=>changeColor(index,event)}
                            style={{backgroundColor:item?'red':undefined,width:'20px',border:'1px solid black',height:'20px'}} key={index}>
                            
                        </div>
